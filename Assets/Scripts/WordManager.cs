@@ -44,7 +44,7 @@ public class WordManager : MonoBehaviour {
 
 			// Unity starts the coordinate system at the lower left for textobjects. Let's center the text. 
 			BoxCollider collider = Instance.GetComponent<BoxCollider>();
-			collider.center = new Vector3 (boundingbox.size.x/2, 0, 0); 
+			collider.center = new Vector3 (boundingbox.size.x/2, -0.29f, 0); 
 			collider.size = new Vector3(boundingbox.size.x, 0.5f, 1);
 
 

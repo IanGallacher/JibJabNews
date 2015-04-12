@@ -30,4 +30,4 @@ Students 10 evil
 Mexicans 10 noun
 Fence 20 good
 Marauders 25 
-Kills 5 verb positive
+Kills 10 verb positive

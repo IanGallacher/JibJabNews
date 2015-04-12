@@ -15,7 +15,8 @@ public class FileIO  {
 			// Create a new StreamReader, tell it which file to read and what encoding the file
 			// was saved as
 			StreamReader theReader = new StreamReader(fileName, Encoding.Default);
-			
+
+			Debug.Log("FUCKING SHIT DAMN ASS NIGGER FUCK");
 			// Immediately clean up the reader after this block of code is done.
 			// You generally use the "using" statement for potentially memory-intensive objects
 			// instead of relying on garbage collection.
@@ -43,6 +44,7 @@ public class FileIO  {
 				
 				// Done reading, close the reader and return true to broadcast success    
 
+				Debug.Log(returnvals[0].word);
 				theReader.Close();
 				return (Word[]) returnvals.Clone();
 			}
@@ -52,6 +54,7 @@ public class FileIO  {
 		// on what didn't work
 		catch (Exception e)
 		{
+			Debug.LogException(e);
 			return null;
 		}
 	}
