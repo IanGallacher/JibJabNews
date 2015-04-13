@@ -13,6 +13,6 @@ public class ScorePoints : MonoBehaviour {
 		scorebar.GetComponent<RatingsBar>().AddScore(
 			wordManager.GetComponent<WordManager>().CalculateScore()
 		);
-		//wordManager.GetComponent<WordManager>().GenerateWords();
+		wordManager.GetComponent<WordManager>().GenerateWords();
 	}
 }

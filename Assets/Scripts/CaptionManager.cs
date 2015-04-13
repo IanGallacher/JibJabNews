@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class CaptionManager : MonoBehaviour {
 
 	public GameObject basetext;
+	public float offsetY = -3.0f;
 	GameObject leftmostobj;
 	List<GameObject> captionqueue = new List<GameObject>();
 
@@ -21,14 +22,14 @@ public class CaptionManager : MonoBehaviour {
 	public void AddPhrase(string inputword) {
 		GameObject Instance;
 		if(captionqueue.Count == 0) {
-			Instance = (GameObject) Instantiate (basetext, new Vector3 (0, -2, 0), Quaternion.identity);
+			Instance = (GameObject) Instantiate (basetext, new Vector3 (0, offsetY, 0), Quaternion.identity);
 			Instance.GetComponent<TextMesh>().text = inputword;
 			leftmostobj = Instance;
 		} else {
 			Instance = (GameObject) Instantiate (basetext, new Vector3 (0, -2, 0), Quaternion.identity);
 			Instance.GetComponent<TextMesh>().text = inputword;
 			Bounds boundingbox = leftmostobj.gameObject.GetComponent<TextMesh>().renderer.bounds;
-			Instance.transform.position = new Vector3(boundingbox.size.x+leftmostobj.transform.position.x + 2.0f, -2,0);
+			Instance.transform.position = new Vector3(boundingbox.size.x+leftmostobj.transform.position.x + 2.0f, offsetY,0);
 			leftmostobj = Instance;
 		}
 

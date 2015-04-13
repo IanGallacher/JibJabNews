@@ -2,12 +2,14 @@
 using System;
 using System.Text;
 using System.IO;  
+using System.Collections;
+using System.Collections.Generic;
 
 //code from Drakestar  http://answers.unity3d.com/questions/279750/loading-data-from-a-txt-file-c.html
 public class FileIO  {
-	public Word[] Load(string fileName) 
+	public List<Word> Load(string fileName) 
 	{
-		Word[] returnvals = new Word[50];
+		List<Word> returnvals = new List<Word>();
 		// Handle any problems that might arise when reading the text
 		try
 		{
@@ -35,7 +37,7 @@ public class FileIO  {
 						// In this example, I split it into arguments based on comma
 						// deliniators, then send that array to DoStuff()
 						string[] entries = line.Split();
-						returnvals[i] = new Word(entries[0], Convert.ToInt32( entries[1].Trim()) );
+						returnvals.Add (new Word(entries[0], Convert.ToInt32( entries[1].Trim()) ) );
 					}
 					i++;
 				}
@@ -45,7 +47,7 @@ public class FileIO  {
 
 				Debug.Log(returnvals[0].word);
 				theReader.Close();
-				return (Word[]) returnvals.Clone();
+				return (List<Word>) returnvals;
 			}
 		}
 		

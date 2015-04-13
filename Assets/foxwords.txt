@@ -1,12 +1,9 @@
 Obama 55 noun evil
-is 5 article verb 
 Communist 22 noun evil adjective
 Country 49 Noun Good
-To 5 verb
-Have 5 verb
 Bald 5 adjective
 Eagles 20 Noun
-Gay 1 adjective
+Gay 10 adjective
 Cops 30  noun 
 Madonna 30 noun good
 Violent 20 adjective
@@ -14,7 +11,8 @@ Video 5 noun evil
 Games 5 noun evil
 MSNBC 1 noun evil
 Muslim 30  Evil adjective
-BlackPeople 40 Noun Evil
+Black 40 Noun Evil
+People 40 Noun Evil
 Radical 45 adjective
 Christians 50 Good Noun
 Naked 60 adjective
@@ -30,4 +28,5 @@ Students 10 evil
 Mexicans 10 noun
 Fence 20 good
 Marauders 25 
+Ferguson 20
 Kills 10 verb positive
