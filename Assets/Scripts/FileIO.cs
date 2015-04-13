@@ -16,7 +16,6 @@ public class FileIO  {
 			// was saved as
 			StreamReader theReader = new StreamReader(fileName, Encoding.Default);
 
-			Debug.Log("FUCKING SHIT DAMN ASS NIGGER FUCK");
 			// Immediately clean up the reader after this block of code is done.
 			// You generally use the "using" statement for potentially memory-intensive objects
 			// instead of relying on garbage collection.

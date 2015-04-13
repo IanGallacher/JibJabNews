@@ -46,8 +46,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CaptionManager.cs" />
      <Compile Include="Assets\Scripts\FileIO.cs" />
+     <Compile Include="Assets\Scripts\RatingsBar.cs" />
      <Compile Include="Assets\Scripts\RotatingCube.cs" />
+     <Compile Include="Assets\Scripts\ScorePoints.cs" />
      <Compile Include="Assets\Scripts\WordBTN.cs" />
      <Compile Include="Assets\Scripts\WordManager.cs" />
      <Compile Include="Assets\Scripts\textbox.cs" />

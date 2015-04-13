@@ -11,8 +11,13 @@ public class Word {
 	}
 }
 public class WordBTN : MonoBehaviour {
+	bool hasbeenclicked = false;
+	public Word word;
 	void OnMouseDown() {
-		GameObject wordManager = GameObject.Find ("MyWordList");
-		wordManager.GetComponent<WordManager> ().AddWord (this);
+		if(!hasbeenclicked){
+			GameObject wordManager = GameObject.Find ("MyWordList");
+			wordManager.GetComponent<WordManager> ().AddWord (this);
+			hasbeenclicked = true;
+		}
 	}
 }
