@@ -16,12 +16,12 @@ public class CaptionManager : MonoBehaviour {
 	}
 
 	void Update() {
+		GameObject deleteme = null;
 		foreach (GameObject thing in captionqueue) {
 			thing.transform.Translate(new Vector3(-1*Time.deltaTime,0,0));
 			Bounds boundingbox = thing.gameObject.GetComponent<TextMesh>().renderer.bounds;
 			if (boundingbox.size.x+thing.transform.position.x < -10) {
-				captionqueue.Remove (thing);
-				GameObject.Destroy (thing.gameObject);
+				deleteme = thing;
 			}
 
 			
@@ -29,6 +29,10 @@ public class CaptionManager : MonoBehaviour {
 			if(boundingbox.size.x+leftmostobj.transform.position.x < 10) {
 				AddPhrase ("this is the end of the world");
 			}
+		}
+		if(deleteme) {
+			captionqueue.Remove (deleteme);
+			GameObject.Destroy(deleteme.gameObject);
 		}
 	}
 	public void AddPhrase(string inputword) {
