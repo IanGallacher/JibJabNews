@@ -45,7 +45,6 @@ public class FileIO  {
 				
 				// Done reading, close the reader and return true to broadcast success    
 
-				Debug.Log(returnvals[0].word);
 				theReader.Close();
 				return (List<Word>) returnvals;
 			}
@@ -53,6 +52,47 @@ public class FileIO  {
 		
 		// If anything broke in the try block, we throw an exception with information
 		// on what didn't work
+		catch (Exception e)
+		{
+			Debug.LogException(e);
+			return null;
+		}
+	}
+
+	public List<Word> LoadPhrase(string fileName) 
+	{
+		List<Word> returnvals = new List<Word>();
+		// Handle any problems that might arise when reading the text
+		try
+		{
+			string line;
+
+			StreamReader theReader = new StreamReader(fileName, Encoding.Default);
+
+			using (theReader)
+			{
+				// While there's lines left in the text file, do this:
+				int i = 0;
+				do
+				{
+					line = theReader.ReadLine();
+					if (line != null)
+					{
+						returnvals.Add (new Word(line, 0) );
+					}
+					i++;
+				}
+				while (line != null);
+				
+				// Done reading, close the reader and return true to broadcast success    
+				
+				Debug.Log(returnvals[0].word);
+				theReader.Close();
+				return (List<Word>) returnvals;
+			}
+		}
+		
+
 		catch (Exception e)
 		{
 			Debug.LogException(e);

@@ -8,15 +8,27 @@ public class CaptionManager : MonoBehaviour {
 	public float offsetY = -3.0f;
 	GameObject leftmostobj;
 	List<GameObject> captionqueue = new List<GameObject>();
-
+	List<Word> phraselist = new List<Word> ();
 	void Start() {
 		AddPhrase ("asdf");
 		AddPhrase ("I like to eat lemons");
 		AddPhrase ("this is the end of the world");
 	}
+
 	void Update() {
 		foreach (GameObject thing in captionqueue) {
 			thing.transform.Translate(new Vector3(-1*Time.deltaTime,0,0));
+			Bounds boundingbox = thing.gameObject.GetComponent<TextMesh>().renderer.bounds;
+			if (boundingbox.size.x+thing.transform.position.x < -10) {
+				captionqueue.Remove (thing);
+				GameObject.Destroy (thing.gameObject);
+			}
+
+			
+			boundingbox = leftmostobj.gameObject.GetComponent<TextMesh>().renderer.bounds;
+			if(boundingbox.size.x+leftmostobj.transform.position.x < 10) {
+				AddPhrase ("this is the end of the world");
+			}
 		}
 	}
 	public void AddPhrase(string inputword) {
@@ -35,7 +47,6 @@ public class CaptionManager : MonoBehaviour {
 
 
 		captionqueue.Add (Instance);
-
 
 //
 //		inputword.transform.position = new Vector3 (wordbox_offsetX+2.7f, wordbox_offsetY-1, 0);

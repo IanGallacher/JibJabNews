@@ -23,6 +23,13 @@ public class WordManager : MonoBehaviour {
 	void Start() {
 		GenerateWords ();
 	}
+	public bool isPhraseEmpty() {
+		if(currentPhrase.Count <= 0) {
+			return true;
+		}
+		print (currentPhrase.Count);
+		return false;
+	}
 
 	float wordbank_offsetX = 0.0f;
 	float wordbank_offsetY = 0.0f;
@@ -61,10 +68,15 @@ public class WordManager : MonoBehaviour {
 
 			int r = Random.Range(0,20);
 			GameObject Instance = (GameObject) Instantiate(CustomWord, new Vector3(0, 2.0f, 0.0f), Quaternion.identity);
-			Instance.GetComponent<WordBTN>().word = templist[r];
+			Instance.GetComponent<WordBTN>().word = templist[r];  
+
+			//s et is a lis t with unique instances
+			//shallow copy vs deep copy																																																																																																																				
 		
 			//if(word.word!=null)
 			if(x>15) {
+				print(x);
+				print(Instance.GetComponent<WordBTN>().word.word);
 				if(x==16) Instance.GetComponent<TextMesh>().text = Instance.GetComponent<WordBTN>().word.word = "Is";
 				if(x==17) Instance.GetComponent<TextMesh>().text = Instance.GetComponent<WordBTN>().word.word = "Are";
 				if(x==18) Instance.GetComponent<TextMesh>().text = Instance.GetComponent<WordBTN>().word.word = "Has";
@@ -106,6 +118,11 @@ public class WordManager : MonoBehaviour {
 		return score;
 	}
 
+	//c++  change the string without creating a new one.
+	//c# and java create new strings.
+	//trings are imutable
+	//constrctor saves them as private to make them immutable
+
 	int previously_added_words = 0;
 	public void AddWord(WordBTN inputword) {
 		inputword.transform.position = new Vector3 (wordbox_offsetX+2.7f+offsetX, wordbox_offsetY, 0);
@@ -118,7 +135,7 @@ public class WordManager : MonoBehaviour {
 			wordbox_offsetX = 0;
 			wordbox_offsetY-=0.8f;
 		}
-
+		print (inputword.word.word);
 		currentPhrase.Add(inputword.word);
 		wordsinlist++;
 		CalculateScore();

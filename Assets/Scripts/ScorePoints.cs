@@ -10,9 +10,12 @@ public class ScorePoints : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-		scorebar.GetComponent<RatingsBar>().AddScore(
-			wordManager.GetComponent<WordManager>().CalculateScore()
-		);
-		wordManager.GetComponent<WordManager>().GenerateWords();
+
+		if(!wordManager.GetComponent<WordManager>().isPhraseEmpty() ) {
+			scorebar.GetComponent<RatingsBar>().AddScore(
+				wordManager.GetComponent<WordManager>().CalculateScore()
+			);
+			wordManager.GetComponent<WordManager>().GenerateWords();
+		}
 	}
 }
