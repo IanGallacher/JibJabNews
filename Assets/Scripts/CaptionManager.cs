@@ -10,9 +10,12 @@ public class CaptionManager : MonoBehaviour {
 	List<GameObject> captionqueue = new List<GameObject>();
 	List<Word> phraselist = new List<Word> ();
 	void Start() {
-		AddPhrase ("asdf");
-		AddPhrase ("I like to eat lemons");
-		AddPhrase ("this is the end of the world");
+		FileIO loader = new FileIO();
+		phraselist = loader.LoadPhrase ("C:\\Users\\Ian\\Documents\\GitHub\\JibJabNews\\Assets\\Headlines.txt");
+		for(int x=0;x<3;x++) {
+			int r = Random.Range(0,phraselist.Count-1);
+			AddPhrase (phraselist[r].word);
+		}
 	}
 
 	void Update() {
@@ -27,7 +30,8 @@ public class CaptionManager : MonoBehaviour {
 			
 			boundingbox = leftmostobj.gameObject.GetComponent<TextMesh>().renderer.bounds;
 			if(boundingbox.size.x+leftmostobj.transform.position.x < 10) {
-				AddPhrase ("this is the end of the world");
+				int r = Random.Range(0,phraselist.Count-1);
+				AddPhrase (phraselist[r].word);
 			}
 		}
 		if(deleteme) {

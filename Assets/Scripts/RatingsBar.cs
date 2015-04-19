@@ -3,7 +3,20 @@ using System.Collections;
 
 public class RatingsBar : MonoBehaviour {
 
-	float myScore { get; set; }
+	float _myScore;
+	float myScore 
+	{ 
+		get { return _myScore; }
+		set { 
+			if(value>(1000-10)) {
+				_myScore = 1000;
+			}
+			else {
+				_myScore = value;
+			}
+		}
+	}
+
 	public float targetScore;
 
 	void Start () {
@@ -15,6 +28,6 @@ public class RatingsBar : MonoBehaviour {
 	}
 
 	public void AddScore(float score) {
-		myScore += score;
+		myScore = myScore + score;
 	}
 }

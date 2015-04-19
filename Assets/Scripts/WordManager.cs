@@ -63,8 +63,8 @@ public class WordManager : MonoBehaviour {
 		//we need to make a templist becasue the we are storing pointers to instances of gameobjects, not just a list of words. 
 
 		//  todo: relative paths in unity. 
-		//  templist = loader.Load("C:\\Users\\Ian\\Documents\\GitHub\\JibJabNews\\Assets\\foxwords .txt");
-		templist = loader.Load("/Users/DrShenanigan/Desktop/JibJabNews/Assets/foxwords.txt");
+		  templist = loader.Load("C:\\Users\\Ian\\Documents\\GitHub\\JibJabNews\\Assets\\foxwords.txt");
+		//templist = loader.Load("/Users/DrShenanigan/Desktop/JibJabNews/Assets/foxwords.txt");
 
 		ResetWordBank();
 
