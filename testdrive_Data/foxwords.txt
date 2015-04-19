@@ -1,0 +1,32 @@
+Obama 55 noun evil
+Communist 22 noun evil adjective
+Country 49 Noun Good
+Bald 5 adjective
+Eagles 20 Noun
+Gay 10 adjective
+Cops 30  noun 
+Madonna 30 noun good
+Violent 20 adjective
+Video 5 noun evil
+Games 5 noun evil
+MSNBC 1 noun evil
+Muslim 30  Evil adjective
+Black 40 Noun Evil
+People 40 Noun Evil
+Radical 45 adjective
+Christians 50 Good Noun
+Naked 60 adjective
+Hollywood 50 adjective
+Actor 50 fantasy
+Socialite 40 fantasy
+Princess 20 fantasy
+Lazy 10 adjective
+College 15 evil
+Oil 15 good
+Dictator 20 evil
+Students 10 evil
+Mexicans 10 noun
+Fence 20 good
+Marauders 25 
+Ferguson 20
+Kills 10 verb positive
