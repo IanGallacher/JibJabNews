@@ -11,7 +11,7 @@ public class CaptionManager : MonoBehaviour {
 	List<Word> phraselist = new List<Word> ();
 	void Start() {
 		FileIO loader = new FileIO();
-		phraselist = loader.LoadPhrase ("C:\\Users\\Ian\\Documents\\GitHub\\JibJabNews\\Assets\\Headlines.txt");
+		phraselist = loader.LoadPhrase (Application.dataPath+"/Headlines.txt");
 		for(int x=0;x<3;x++) {
 			int r = Random.Range(0,phraselist.Count-1);
 			AddPhrase (phraselist[r].word);
