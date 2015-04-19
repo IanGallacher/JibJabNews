@@ -6,6 +6,7 @@ public class RatingsBar : MonoBehaviour {
 	float _myScore;
 	float myScore 
 	{ 
+		//why does this not work?
 		get { return _myScore; }
 		set { 
 			if(value>(1000-10)) {
@@ -29,5 +30,6 @@ public class RatingsBar : MonoBehaviour {
 
 	public void AddScore(float score) {
 		myScore = myScore + score;
+		if(myScore>100)myScore=100;
 	}
 }
