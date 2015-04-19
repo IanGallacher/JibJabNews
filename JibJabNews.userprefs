@@ -9,7 +9,7 @@
       <File FileName="Assets\Scripts\translateleft.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\textbox.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ScorePoints.cs" Line="17" Column="6" />
-      <File FileName="Assets\Scripts\RatingsBar.cs" Line="10" Column="9" />
+      <File FileName="Assets\Scripts\RatingsBar.cs" Line="23" Column="22" />
       <File FileName="..\ClashOfHonor\Assets\ClashofHonor\Source\NZZ_FirstPersonCamera.cs" Line="1" Column="1" />
       <File FileName="..\ClashOfHonor\Assets\ClashofHonor\Source\Player\PlayerController.cs" Line="48" Column="2" />
       <File FileName="..\ClashOfHonor\Assets\ClashofHonor\Source\enemies\NZZ_StandardBullet.cs" Line="31" Column="18" />
