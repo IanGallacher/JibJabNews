@@ -58,7 +58,9 @@
      <Compile Include="Assets\Scripts\textbox.cs" />
      <Compile Include="Assets\Scripts\translateleft.cs" />
      <None Include="Assets\foxwords.txt" />
+     <None Include="Assets\Materials\Text.shader" />
      <None Include="Assets\Headlines.txt" />
+     <None Include="Assets\Materials\Logo.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
